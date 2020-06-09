@@ -1,3 +1,7 @@
+源码阅读文档放在了/vertical-pod-autoscaler/pkg下的各个组件下面
+
+
+
 VPA的核心组件包括Admission Controller，Recommender，Updater
 
 控制器AC会拦截Pod的创建请求，如果Pod与未设置为off模式的VPA配置匹配，控制器通过将推荐资源应用到Pod spec来重写请求。AC通过从Recommender获取推荐资源，如果调用超时或失败，控制器将采用缓存在VPA对象中的资源建议。如果这也是不可用的，控制器采取最初指定的资源。
